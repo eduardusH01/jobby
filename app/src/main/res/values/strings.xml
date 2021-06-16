@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jobby</string>
+    <string name="splash_screen">help you to find it!</string>
+    <string name="findit">find it!</string>
+    <string name="about">about</string>
+    <string name="privacyp">privacy policy</string>
+    <string name="filters">filters</string>
+    <string name="lokasi">LOKASI</string>
+    <string name="batasumur">BATAS UMUR</string>
+    <string name="pendidikanterakhir">PENDIDIKAN TERAKHIR</string>
+    <string name="gaji">RENTANG GAJI</string>
+    <string name="search">Search here...</string>
+</resources>
