@@ -10,12 +10,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-//    @Override
-//    public void onClick(View v) {
-//        Intent intent = new Intent(this, LowonganPekerjaanActivity.class);
-//        startActivity(intent);
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

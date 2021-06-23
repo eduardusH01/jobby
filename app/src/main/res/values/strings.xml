@@ -8,6 +8,15 @@
     <string name="lokasi">LOKASI</string>
     <string name="batasumur">BATAS UMUR</string>
     <string name="pendidikanterakhir">PENDIDIKAN TERAKHIR</string>
-    <string name="gaji">RENTANG GAJI</string>
-    <string name="search">Search here...</string>
+    <string name="rentanggaji">RENTANG GAJI</string>
+    <string name="search">Search here…</string>
+    <string name="back">back</string>
+    <string name="desc">Deskripsi Pekerjaan</string>
+    <string name="req">Requirements</string>
+    <string name="inf">Informasi Tambahan</string>
+    <string name="gaji">Gaji:</string>
+    <string name="pendidikan">Pendidikan terakhir:</string>
+    <string name="umurmin">Umur minimal:</string>
+    <string name="umurmax">Umur maksimal:</string>
+    <string name="numb">00000</string>
 </resources>

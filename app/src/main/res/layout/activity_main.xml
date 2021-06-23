@@ -24,7 +24,7 @@
         android:layout_below="@+id/jobbymain"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/yellow1"
         android:fontFamily="@font/pangolin"
         android:includeFontPadding="false"
         android:text="@string/findit"

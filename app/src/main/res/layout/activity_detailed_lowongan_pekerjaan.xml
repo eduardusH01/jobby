@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dlpparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_purple"
+    tools:context=".DetailedLowonganPekerjaanActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dlpbtnBack"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/yellow2"
+        android:fontFamily="@font/paytoneone"
+        android:includeFontPadding="false"
+        android:text="@string/back"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20sp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="0dp"
+                android:padding="10dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    >
+
+                    <TextView
+                        android:id="@+id/detailTxtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/patuaone"
+                        android:text="Nama Pekerjaan"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/detailImage"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@id/detailTxtName"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:contentDescription="@string/app_name" />
+
+
+                    <TextView
+                        android:id="@+id/detailTxtPenyedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detailImage"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pangolin"
+                        android:text="Penyedia"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailTxtLokasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtPenyedia"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pangolin"
+                        android:text="Lokasi"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailTxtDescriptionTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtLokasi"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/desc"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailTxtDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtDescriptionTemp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/desc"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtRequirementTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtDescription"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/req"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailTxtRequirement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtRequirementTemp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/req"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtInformasi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtRequirement"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/inf"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/detailTxtGajiTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtInformasi"
+                        android:layout_marginStart="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/gaji"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtGaji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtInformasi"
+                        android:layout_marginStart="5sp"
+                        android:layout_toEndOf="@id/detailTxtGajiTemp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/numb"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtPendidikanTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtGajiTemp"
+                        android:layout_marginStart="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/pendidikan"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtPendidikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtGaji"
+                        android:layout_marginStart="5sp"
+                        android:layout_toEndOf="@id/detailTxtPendidikanTemp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/numb"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtUmurMinTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtPendidikanTemp"
+                        android:layout_marginStart="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/umurmin"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtUmurMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtPendidikan"
+                        android:layout_marginStart="5sp"
+                        android:layout_toEndOf="@id/detailTxtUmurMinTemp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/numb"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtUmurMaxTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtUmurMinTemp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginBottom="20sp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/umurmax"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailTxtUmurMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/detailTxtUmurMin"
+                        android:layout_marginStart="5sp"
+                        android:layout_toEndOf="@id/detailTxtUmurMaxTemp"
+                        android:fontFamily="@font/pangolin"
+                        android:text="@string/numb"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

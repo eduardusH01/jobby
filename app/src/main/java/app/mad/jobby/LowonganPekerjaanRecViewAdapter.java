@@ -1,6 +1,7 @@
 package app.mad.jobby;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,21 +42,66 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtName.setText(lowonganPekerjaanArrayList.get(position).getNama());
-        holder.txtPenyedia.setText(lowonganPekerjaanArrayList.get(position).getPenyedia());
-        holder.txtLokasi.setText(lowonganPekerjaanArrayList.get(position).getLokasi());
+
+        String nama = lowonganPekerjaanArrayList.get(position).getNama();
+        String lokasi = lowonganPekerjaanArrayList.get(position).getLokasi();
+        String penyedia = lowonganPekerjaanArrayList.get(position).getPenyedia();
+        String gaji;
+        if(lowonganPekerjaanArrayList.get(position).getGaji() == 0){
+            gaji = "Dirahasiakan";
+        }
+        else{
+            gaji = String.valueOf(lowonganPekerjaanArrayList.get(position).getGaji());
+        }
+
+        String umur_min;
+        if(lowonganPekerjaanArrayList.get(position).getUmur_min() == 0){
+            umur_min = "Tidak Ada";
+        }
+        else{
+            umur_min = String.valueOf(lowonganPekerjaanArrayList.get(position).getUmur_min());
+        }
+
+        String umur_max;
+        if(lowonganPekerjaanArrayList.get(position).getUmur_max() == 99){
+            umur_max = "Tidak Ada";
+        }
+        else{
+            umur_max = String.valueOf(lowonganPekerjaanArrayList.get(position).getUmur_max());
+        }
+
+        String pendidikan_terakhir = lowonganPekerjaanArrayList.get(position).getPendidikan_terakhir();
+        String image_url = lowonganPekerjaanArrayList.get(position).getImage_url();
+        String description = lowonganPekerjaanArrayList.get(position).getDescription();
+        String requirement = lowonganPekerjaanArrayList.get(position).getRequirement();
+
+        holder.txtName.setText(nama);
+        holder.txtPenyedia.setText(penyedia);
+        holder.txtLokasi.setText(lokasi);
+        Glide.with(context)
+                .asBitmap()
+                .load(image_url)
+                .into(holder.image);
 
         holder.parent.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, lowonganPekerjaanArrayList.get(position).getNama() + " Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, DetailedLowonganPekerjaanActivity.class);
+
+                intent.putExtra("nama", nama);
+                intent.putExtra("lokasi", lokasi);
+                intent.putExtra("penyedia", penyedia);
+                intent.putExtra("gaji", gaji);
+                intent.putExtra("umur_min", umur_min);
+                intent.putExtra("umur_max", umur_max);
+                intent.putExtra("pendidikan_terakhir", pendidikan_terakhir);
+                intent.putExtra("image_url", image_url);
+                intent.putExtra("description", description);
+                intent.putExtra("requirement", requirement);
+
+                context.startActivity(intent);
             }
         });
-
-        Glide.with(context)
-                .asBitmap()
-                .load(lowonganPekerjaanArrayList.get(position).getImage_url())
-                .into(holder.image);
     }
 
     @Override
@@ -65,7 +111,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private CardView parent;
-        private TextView txtName, txtPenyedia, txtLokasi, txtGaji;
+        private TextView txtName, txtPenyedia, txtLokasi;
         private ImageView image;
 
         public ViewHolder(@NonNull View itemView) {
