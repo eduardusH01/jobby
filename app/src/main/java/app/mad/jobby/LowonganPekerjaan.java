@@ -1,18 +1,21 @@
 package app.mad.jobby;
 
 public class LowonganPekerjaan {
-    private String nama, lokasi, pendidikanTerakhir, penyedia, imageUrl;
-    private int gaji, umurMin, umurMax;
+    private String nama, lokasi, penyedia;
+    private int gaji, umur_min, umur_max;
+    private String pendidikan_terakhir, image_url, description, requirement;
 
-    public LowonganPekerjaan(String nama, String lokasi, String pendidikanTerakhir, String penyedia, String imageUrl, int gaji, int umurMin, int umurMax) {
+    public LowonganPekerjaan(String nama, String lokasi, String penyedia, int gaji, int umur_min, int umur_max, String pendidikan_terakhir, String image_url, String description, String requirement) {
         this.nama = nama;
         this.lokasi = lokasi;
-        this.pendidikanTerakhir = pendidikanTerakhir;
         this.penyedia = penyedia;
-        this.imageUrl = imageUrl;
         this.gaji = gaji;
-        this.umurMin = umurMin;
-        this.umurMax = umurMax;
+        this.umur_min = umur_min;
+        this.umur_max = umur_max;
+        this.pendidikan_terakhir = pendidikan_terakhir;
+        this.image_url = image_url;
+        this.description = description;
+        this.requirement = requirement;
     }
 
     public String getNama() {
@@ -23,28 +26,36 @@ public class LowonganPekerjaan {
         return lokasi;
     }
 
-    public String getPendidikanTerakhir() {
-        return pendidikanTerakhir;
-    }
-
     public String getPenyedia() {
         return penyedia;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
     }
 
     public int getGaji() {
         return gaji;
     }
 
-    public int getUmurMin() {
-        return umurMin;
+    public int getUmur_min() {
+        return umur_min;
     }
 
-    public int getUmurMax() {
-        return umurMax;
+    public int getUmur_max() {
+        return umur_max;
+    }
+
+    public String getPendidikan_terakhir() {
+        return pendidikan_terakhir;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getRequirement() {
+        return requirement;
     }
 
     @Override
@@ -52,12 +63,14 @@ public class LowonganPekerjaan {
         return "LowonganPekerjaan{" +
                 "nama='" + nama + '\'' +
                 ", lokasi='" + lokasi + '\'' +
-                ", pendidikanTerakhir='" + pendidikanTerakhir + '\'' +
                 ", penyedia='" + penyedia + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
                 ", gaji=" + gaji +
-                ", umurMin=" + umurMin +
-                ", umurMax=" + umurMax +
+                ", umur_min=" + umur_min +
+                ", umur_max=" + umur_max +
+                ", pendidikan_terakhir='" + pendidikan_terakhir + '\'' +
+                ", image_url='" + image_url + '\'' +
+                ", description='" + description + '\'' +
+                ", requirement='" + requirement + '\'' +
                 '}';
     }
 }

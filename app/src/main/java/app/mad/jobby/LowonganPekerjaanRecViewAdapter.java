@@ -18,12 +18,16 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<LowonganPekerjaanRecViewAdapter.ViewHolder> {
-
     private ArrayList<LowonganPekerjaan> lowonganPekerjaanArrayList = new ArrayList<>();
     private Context context;
 
     public LowonganPekerjaanRecViewAdapter(Context context) {
         this.context = context;
+    }
+
+    public void setLowonganPekerjaanArrayList(ArrayList<LowonganPekerjaan> lowonganPekerjaanArrayList) {
+        this.lowonganPekerjaanArrayList = lowonganPekerjaanArrayList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -50,18 +54,13 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
 
         Glide.with(context)
                 .asBitmap()
-                .load(lowonganPekerjaanArrayList.get(position).getImageUrl())
+                .load(lowonganPekerjaanArrayList.get(position).getImage_url())
                 .into(holder.image);
     }
 
     @Override
     public int getItemCount() {
         return lowonganPekerjaanArrayList.size();
-    }
-
-    public void setLowonganPekerjaanArrayList(ArrayList<LowonganPekerjaan> lowonganPekerjaanArrayList) {
-        this.lowonganPekerjaanArrayList = lowonganPekerjaanArrayList;
-        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
