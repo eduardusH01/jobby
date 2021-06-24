@@ -18,9 +18,9 @@
 
         <ImageView
             android:id="@+id/itemImage"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="25dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="25dp"
@@ -30,7 +30,8 @@
             android:id="@+id/itemTxtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_toEndOf="@+id/itemImage"
             android:fontFamily="@font/patuaone"
             android:text="Nama Pekerjaan"
@@ -43,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/itemTxtName"
+            android:layout_marginEnd="10dp"
             android:layout_toEndOf="@id/itemImage"
             android:fontFamily="@font/pangolin"
             android:text="Penyedia"
@@ -55,25 +57,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/itemTxtPenyedia"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
             android:layout_toEndOf="@id/itemImage"
             android:fontFamily="@font/pangolin"
             android:text="Lokasi"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <!--        <TextView-->
-        <!--            android:id="@+id/itemTxtGaji"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_below="@+id/itemTxtLokasi"-->
-        <!--            android:layout_toEndOf="@id/itemImage"-->
-        <!--            android:fontFamily="@font/pangolin"-->
-        <!--            android:text="Gaji"-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:textSize="20sp"-->
-        <!--            android:textStyle="bold" />-->
-
 
     </RelativeLayout>
 

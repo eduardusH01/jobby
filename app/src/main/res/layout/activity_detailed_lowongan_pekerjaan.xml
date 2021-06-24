@@ -29,7 +29,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20sp">
+            android:paddingBottom="20dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -45,15 +45,16 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    >
+                    android:background="@color/white">
 
                     <TextView
                         android:id="@+id/detailTxtName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="12dp"
                         android:fontFamily="@font/patuaone"
                         android:text="Nama Pekerjaan"
                         android:textColor="@color/black"
@@ -67,8 +68,8 @@
                         android:layout_below="@id/detailTxtName"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/ic_launcher_background"
-                        android:contentDescription="@string/app_name" />
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_launcher_background" />
 
 
                     <TextView
@@ -77,6 +78,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/detailImage"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="Penyedia"
                         android:textColor="@color/black"
@@ -89,6 +92,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtPenyedia"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="Lokasi"
                         android:textColor="@color/black"
@@ -100,8 +105,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtLokasi"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginTop="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/desc"
                         android:textColor="@color/black"
@@ -113,8 +118,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtDescriptionTemp"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginEnd="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/desc"
                         android:textColor="@color/black"
@@ -125,8 +130,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtDescription"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginTop="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/req"
                         android:textColor="@color/black"
@@ -138,8 +143,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtRequirementTemp"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginEnd="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/req"
                         android:textColor="@color/black"
@@ -150,8 +155,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtRequirement"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginTop="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/inf"
                         android:textColor="@color/black"
@@ -163,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtInformasi"
-                        android:layout_marginStart="20sp"
+                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/gaji"
                         android:textColor="@color/black"
@@ -174,7 +179,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtInformasi"
-                        android:layout_marginStart="5sp"
+                        android:layout_marginStart="5dp"
                         android:layout_toEndOf="@id/detailTxtGajiTemp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/numb"
@@ -186,7 +191,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtGajiTemp"
-                        android:layout_marginStart="20sp"
+                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/pendidikan"
                         android:textColor="@color/black"
@@ -197,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtGaji"
-                        android:layout_marginStart="5sp"
+                        android:layout_marginStart="5dp"
                         android:layout_toEndOf="@id/detailTxtPendidikanTemp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/numb"
@@ -209,7 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtPendidikanTemp"
-                        android:layout_marginStart="20sp"
+                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/umurmin"
                         android:textColor="@color/black"
@@ -220,7 +225,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtPendidikan"
-                        android:layout_marginStart="5sp"
+                        android:layout_marginStart="5dp"
                         android:layout_toEndOf="@id/detailTxtUmurMinTemp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/numb"
@@ -232,8 +237,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtUmurMinTemp"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginBottom="20sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/umurmax"
                         android:textColor="@color/black"
@@ -244,7 +249,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtUmurMin"
-                        android:layout_marginStart="5sp"
+                        android:layout_marginStart="5dp"
                         android:layout_toEndOf="@id/detailTxtUmurMaxTemp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/numb"
@@ -261,10 +266,7 @@
         </RelativeLayout>
 
 
-
-
     </ScrollView>
-
 
 
 </RelativeLayout>

@@ -55,7 +55,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
         }
 
         String umur_min;
-        if(lowonganPekerjaanArrayList.get(position).getUmur_min() == 0){
+        if(lowonganPekerjaanArrayList.get(position).getUmur_min() == 99){
             umur_min = "Tidak Ada";
         }
         else{
@@ -63,7 +63,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
         }
 
         String umur_max;
-        if(lowonganPekerjaanArrayList.get(position).getUmur_max() == 99){
+        if(lowonganPekerjaanArrayList.get(position).getUmur_max() == 0){
             umur_max = "Tidak Ada";
         }
         else{
