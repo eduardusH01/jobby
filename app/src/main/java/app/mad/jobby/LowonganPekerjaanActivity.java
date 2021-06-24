@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
@@ -18,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,12 +27,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LowonganPekerjaanActivity extends AppCompatActivity {
+public class LowonganPekerjaanActivity extends AppCompatActivity implements FilterBottomSheetDialog.BottomSheetListener {
 
     private RecyclerView LowonganPekerjaanRecView;
     private ArrayList<LowonganPekerjaan> lowonganPekerjaanArrayList;
     private LowonganPekerjaanRecViewAdapter adapter;
     private SearchView searchView;
+    private ArrayList<String> lokasiArraylist;
 
     private static final String BASE_URL = "http://192.168.100.9/android/getProducts.php";
 
@@ -53,7 +56,11 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
 
         lowonganPekerjaanArrayList = new ArrayList<>();
 
+        lokasiArraylist = new ArrayList<>();
+        lokasiArraylist.add("All");
+
         getProducts();
+        initFilter();
     }
 
     private void getProducts(){
@@ -80,6 +87,10 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
 
                                 LowonganPekerjaan lowonganPekerjaan = new LowonganPekerjaan(nama, lokasi, penyedia, gaji, umur_min, umur_max, pendidikan_terakhir, image_url, description, requirement, job_url);
                                 lowonganPekerjaanArrayList.add(lowonganPekerjaan);
+                                if(!lokasiArraylist.contains(lokasi)){
+                                    lokasiArraylist.add(lokasi);
+                                }
+//                                System.out.println(lokasiArraylist);
                             }
 
                         }catch (Exception e){
@@ -127,6 +138,31 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    public void initFilter(){
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("listLokasi", lokasiArraylist);
+
+        FilterBottomSheetDialog bottomSheet = new FilterBottomSheetDialog();
+        bottomSheet.setArguments(bundle);
+
+        Button btnFilter = findViewById(R.id.lpbtnFilter);
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheet.show(getSupportFragmentManager(), "filterBottomSheet");
+            }
+        });
+
+
+//        BottomSheetDialogFragment bottomSheetDialogFragment = new BottomSheetDialogFragment();
+//        bottomSheetDialogFragment.setArguments(bundle);
+    }
+
+    @Override
+    public void onSpinnerItemSelected() {
 
     }
 }
