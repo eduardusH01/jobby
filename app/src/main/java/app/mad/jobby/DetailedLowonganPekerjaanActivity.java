@@ -74,6 +74,8 @@ public class DetailedLowonganPekerjaanActivity extends AppCompatActivity {
                 .load(image_url)
                 .into(image);
 
+        image.setClipToOutline(true);
+
         btnInfoLanjut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -59,17 +59,19 @@
                         android:text="Nama Pekerjaan"
                         android:textColor="@color/black"
                         android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
                     <ImageView
                         android:id="@+id/detailImage"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtName"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:contentDescription="@string/app_name"
-                        android:src="@drawable/ic_launcher_background" />
+                        android:src="@drawable/ic_launcher_background"
+                        android:background="@drawable/rounded_image"/>
 
 
                     <TextView
@@ -84,7 +86,8 @@
                         android:text="Penyedia"
                         android:textColor="@color/black"
                         android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/detailTxtLokasi"
@@ -98,7 +101,8 @@
                         android:text="Lokasi"
                         android:textColor="@color/black"
                         android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
                     <TextView
                         android:id="@+id/detailTxtDescriptionTemp"
@@ -190,7 +194,7 @@
                         android:id="@+id/detailTxtPendidikanTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/detailTxtGajiTemp"
+                        android:layout_below="@id/detailTxtGaji"
                         android:layout_marginStart="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/pendidikan"
@@ -203,6 +207,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detailTxtGaji"
                         android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
                         android:layout_toEndOf="@id/detailTxtPendidikanTemp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/numb"
@@ -213,7 +218,7 @@
                         android:id="@+id/detailTxtUmurMinTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/detailTxtPendidikanTemp"
+                        android:layout_below="@id/detailTxtPendidikan"
                         android:layout_marginStart="20dp"
                         android:fontFamily="@font/pangolin"
                         android:text="@string/umurmin"
@@ -236,7 +241,7 @@
                         android:id="@+id/detailTxtUmurMaxTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/detailTxtUmurMinTemp"
+                        android:layout_below="@id/detailTxtUmurMin"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="20dp"
                         android:fontFamily="@font/pangolin"

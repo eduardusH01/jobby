@@ -56,13 +56,16 @@
         android:textColorHint="@color/black"
         android:textSize="20sp"
         android:inputType="text"
-        android:importantForAutofill="no"/>
+        android:importantForAutofill="no"
+        android:translationZ="90dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lpRecView"
-        android:layout_below="@+id/lpEditText"
+        android:layout_below="@+id/toolbar"
+        android:paddingTop="80dp"
+        android:paddingBottom="20dp"
         android:layout_centerHorizontal="true"/>
 
 

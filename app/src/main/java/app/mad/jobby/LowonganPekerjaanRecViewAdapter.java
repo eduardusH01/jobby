@@ -83,6 +83,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
                 .asBitmap()
                 .load(image_url)
                 .into(holder.image);
+        holder.image.setClipToOutline(true);
 
         holder.parent.setOnClickListener(new View.OnClickListener(){
             @Override
