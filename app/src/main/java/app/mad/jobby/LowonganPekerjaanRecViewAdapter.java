@@ -74,6 +74,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
         String image_url = lowonganPekerjaanArrayList.get(position).getImage_url();
         String description = lowonganPekerjaanArrayList.get(position).getDescription();
         String requirement = lowonganPekerjaanArrayList.get(position).getRequirement();
+        String job_url = lowonganPekerjaanArrayList.get(position).getJob_url();
 
         holder.txtName.setText(nama);
         holder.txtPenyedia.setText(penyedia);
@@ -98,6 +99,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
                 intent.putExtra("image_url", image_url);
                 intent.putExtra("description", description);
                 intent.putExtra("requirement", requirement);
+                intent.putExtra("job_url", job_url);
 
                 context.startActivity(intent);
             }

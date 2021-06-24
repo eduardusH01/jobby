@@ -73,8 +73,9 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
                                 String image_url = object.getString("image_url");
                                 String description = object.getString("description");
                                 String requirement = object.getString("requirement");
+                                String job_url = object.getString("job_url");
 
-                                LowonganPekerjaan lowonganPekerjaan = new LowonganPekerjaan(nama, lokasi, penyedia, gaji, umur_min, umur_max, pendidikan_terakhir, image_url, description, requirement);
+                                LowonganPekerjaan lowonganPekerjaan = new LowonganPekerjaan(nama, lokasi, penyedia, gaji, umur_min, umur_max, pendidikan_terakhir, image_url, description, requirement, job_url);
                                 lowonganPekerjaanArrayList.add(lowonganPekerjaan);
                             }
 

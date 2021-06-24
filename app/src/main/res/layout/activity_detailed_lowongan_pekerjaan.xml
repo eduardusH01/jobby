@@ -256,6 +256,39 @@
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
+<!--                    <TextView-->
+<!--                        android:id="@+id/detailTxtInfoLanjut"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/detailTxtUmurMaxTemp"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginEnd="20dp"-->
+<!--                        android:layout_marginBottom="30dp"-->
+<!--                        android:fontFamily="@font/pangolin"-->
+<!--                        android:text="@string/inflanjut"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="20sp" />-->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/detailBtnInfoLanjut"
+                        android:layout_width="200dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/detailTxtUmurMax"
+                        android:backgroundTint="@color/gray"
+                        android:fontFamily="@font/pangolin"
+                        android:includeFontPadding="false"
+                        android:textAllCaps="false"
+                        android:text="@string/infolebihlanjut"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:cornerRadius="20dp" />
+
+
 
                 </RelativeLayout>
 

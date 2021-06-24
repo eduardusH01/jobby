@@ -3,9 +3,9 @@ package app.mad.jobby;
 public class LowonganPekerjaan {
     private String nama, lokasi, penyedia;
     private int gaji, umur_min, umur_max;
-    private String pendidikan_terakhir, image_url, description, requirement;
+    private String pendidikan_terakhir, image_url, description, requirement, job_url;
 
-    public LowonganPekerjaan(String nama, String lokasi, String penyedia, int gaji, int umur_min, int umur_max, String pendidikan_terakhir, String image_url, String description, String requirement) {
+    public LowonganPekerjaan(String nama, String lokasi, String penyedia, int gaji, int umur_min, int umur_max, String pendidikan_terakhir, String image_url, String description, String requirement, String job_url) {
         this.nama = nama;
         this.lokasi = lokasi;
         this.penyedia = penyedia;
@@ -16,6 +16,7 @@ public class LowonganPekerjaan {
         this.image_url = image_url;
         this.description = description;
         this.requirement = requirement;
+        this.job_url = job_url;
     }
 
     public String getNama() {
@@ -58,6 +59,10 @@ public class LowonganPekerjaan {
         return requirement;
     }
 
+    public String getJob_url() {
+        return job_url;
+    }
+
     @Override
     public String toString() {
         return "LowonganPekerjaan{" +
@@ -71,6 +76,7 @@ public class LowonganPekerjaan {
                 ", image_url='" + image_url + '\'' +
                 ", description='" + description + '\'' +
                 ", requirement='" + requirement + '\'' +
+                ", job_url='" + job_url + '\'' +
                 '}';
     }
 }

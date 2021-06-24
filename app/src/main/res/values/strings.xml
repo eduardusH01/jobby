@@ -19,4 +19,6 @@
     <string name="umurmin">Umur minimal:</string>
     <string name="umurmax">Umur maksimal:</string>
     <string name="numb">00000</string>
+    <string name="inflanjut">Untuk lebih lanjutnya, silakan klik di sini.</string>
+    <string name="infolebihlanjut">info lebih lanjut</string>
 </resources>
