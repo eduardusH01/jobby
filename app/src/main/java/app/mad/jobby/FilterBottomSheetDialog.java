@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +38,8 @@ public class FilterBottomSheetDialog extends BottomSheetDialogFragment {
         spinnerLokasi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+//                Toast.makeText(getActivity(), listLokasi.get(position) + " Selected", Toast.LENGTH_SHORT).show();
+                mListener.onSpinnerItemSelected(listLokasi.get(position));
             }
 
             @Override
@@ -49,7 +51,7 @@ public class FilterBottomSheetDialog extends BottomSheetDialogFragment {
     }
 
     public interface BottomSheetListener{
-        void onSpinnerItemSelected();
+        void onSpinnerItemSelected(String text);
     }
 
     @Override

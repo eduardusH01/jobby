@@ -34,6 +34,8 @@ public class LowonganPekerjaanActivity extends AppCompatActivity implements Filt
     private LowonganPekerjaanRecViewAdapter adapter;
     private SearchView searchView;
     private ArrayList<String> lokasiArraylist;
+    private String selectedLokasi = "All";
+    private String currentSearchText = "";
 
     private static final String BASE_URL = "http://192.168.100.9/android/getProducts.php";
 
@@ -113,34 +115,6 @@ public class LowonganPekerjaanActivity extends AppCompatActivity implements Filt
         Volley.newRequestQueue(LowonganPekerjaanActivity.this).add(stringRequest);
     }
 
-    private void initSearchWidgets(){
-        searchView = (SearchView) findViewById(R.id.lpSearchView);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                ArrayList<LowonganPekerjaan> filteredLowonganPekerjaan = new ArrayList<LowonganPekerjaan>();
-                for(int i = 0; i < lowonganPekerjaanArrayList.size(); i++){
-                    LowonganPekerjaan lowonganPekerjaan = lowonganPekerjaanArrayList.get(i);
-                    if(lowonganPekerjaan.getNama().toLowerCase().contains(s.toLowerCase().trim())){
-                        filteredLowonganPekerjaan.add(lowonganPekerjaan);
-
-                    }
-                }
-                LowonganPekerjaanRecViewAdapter sadapter = new LowonganPekerjaanRecViewAdapter(LowonganPekerjaanActivity.this);
-                sadapter.setLowonganPekerjaanArrayList(filteredLowonganPekerjaan);
-                LowonganPekerjaanRecView.setAdapter(sadapter);
-
-                return false;
-            }
-        });
-
-    }
-
     public void initFilter(){
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("listLokasi", lokasiArraylist);
@@ -161,8 +135,80 @@ public class LowonganPekerjaanActivity extends AppCompatActivity implements Filt
 //        bottomSheetDialogFragment.setArguments(bundle);
     }
 
-    @Override
-    public void onSpinnerItemSelected() {
+    private void initSearchWidgets(){
+        searchView = (SearchView) findViewById(R.id.lpSearchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                currentSearchText = s;
+                ArrayList<LowonganPekerjaan> filteredLowonganPekerjaan = new ArrayList<LowonganPekerjaan>();
+                for(int i = 0; i < lowonganPekerjaanArrayList.size(); i++){
+                    LowonganPekerjaan lowonganPekerjaan = lowonganPekerjaanArrayList.get(i);
+                    if(lowonganPekerjaan.getNama().toLowerCase().contains(s.toLowerCase().trim())){
+                        if(selectedLokasi.equals("All")){
+                            filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                        }
+                        else{
+                            if(lowonganPekerjaan.getLokasi().equals(selectedLokasi)){
+                                filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                            }
+                        }
+                    }
+                }
+                LowonganPekerjaanRecViewAdapter sadapter = new LowonganPekerjaanRecViewAdapter(LowonganPekerjaanActivity.this);
+                sadapter.setLowonganPekerjaanArrayList(filteredLowonganPekerjaan);
+                LowonganPekerjaanRecView.setAdapter(sadapter);
+
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public void onSpinnerItemSelected(String text) {
+        selectedLokasi = text;
+        ArrayList<LowonganPekerjaan> filteredLowonganPekerjaan = new ArrayList<LowonganPekerjaan>();
+
+        if(selectedLokasi.equals("All")){
+            for(int i = 0; i < lowonganPekerjaanArrayList.size(); i++){
+                LowonganPekerjaan lowonganPekerjaan = lowonganPekerjaanArrayList.get(i);
+                if(currentSearchText.equals("")){
+                    filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                }
+                else{
+                    if(lowonganPekerjaan.getNama().toLowerCase().contains(currentSearchText.toLowerCase().trim())){
+                        filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                    }
+                }
+            }
+            LowonganPekerjaanRecViewAdapter sadapter = new LowonganPekerjaanRecViewAdapter(LowonganPekerjaanActivity.this);
+            sadapter.setLowonganPekerjaanArrayList(filteredLowonganPekerjaan);
+            LowonganPekerjaanRecView.setAdapter(sadapter);
+        }
+
+        else{
+            for(int i = 0; i < lowonganPekerjaanArrayList.size(); i++){
+                LowonganPekerjaan lowonganPekerjaan = lowonganPekerjaanArrayList.get(i);
+                if(lowonganPekerjaan.getLokasi().equals(selectedLokasi)){
+                    if(currentSearchText.equals("")){
+                        filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                    }
+                    else{
+                        if(lowonganPekerjaan.getNama().toLowerCase().contains(currentSearchText.toLowerCase().trim())){
+                            filteredLowonganPekerjaan.add(lowonganPekerjaan);
+                        }
+                    }
+                }
+            }
+            LowonganPekerjaanRecViewAdapter sadapter = new LowonganPekerjaanRecViewAdapter(LowonganPekerjaanActivity.this);
+            sadapter.setLowonganPekerjaanArrayList(filteredLowonganPekerjaan);
+            LowonganPekerjaanRecView.setAdapter(sadapter);
+        }
     }
 }

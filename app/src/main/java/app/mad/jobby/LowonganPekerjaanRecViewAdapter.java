@@ -48,7 +48,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
         String penyedia = lowonganPekerjaanArrayList.get(position).getPenyedia();
         String gaji;
         if(lowonganPekerjaanArrayList.get(position).getGaji() == 0){
-            gaji = "Dirahasiakan";
+            gaji = "Tidak Tertera";
         }
         else{
             gaji = String.valueOf(lowonganPekerjaanArrayList.get(position).getGaji());
@@ -56,7 +56,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
 
         String umur_min;
         if(lowonganPekerjaanArrayList.get(position).getUmur_min() == 99){
-            umur_min = "Tidak Ada";
+            umur_min = "Tidak Tertera";
         }
         else{
             umur_min = String.valueOf(lowonganPekerjaanArrayList.get(position).getUmur_min());
@@ -64,7 +64,7 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
 
         String umur_max;
         if(lowonganPekerjaanArrayList.get(position).getUmur_max() == 0){
-            umur_max = "Tidak Ada";
+            umur_max = "Tidak Tertera";
         }
         else{
             umur_max = String.valueOf(lowonganPekerjaanArrayList.get(position).getUmur_max());
