@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -28,15 +30,16 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
     private RecyclerView LowonganPekerjaanRecView;
     private ArrayList<LowonganPekerjaan> lowonganPekerjaanArrayList;
     private LowonganPekerjaanRecViewAdapter adapter;
+    private SearchView searchView;
 
     private static final String BASE_URL = "http://192.168.100.9/android/getProducts.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lowongan_pekerjaan);
 
+        initSearchWidgets();
         ImageView logoJobby = findViewById(R.id.lpjobbylogo);
         logoJobby.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,5 +100,33 @@ public class LowonganPekerjaanActivity extends AppCompatActivity {
         });
 
         Volley.newRequestQueue(LowonganPekerjaanActivity.this).add(stringRequest);
+    }
+
+    private void initSearchWidgets(){
+        searchView = (SearchView) findViewById(R.id.lpSearchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                ArrayList<LowonganPekerjaan> filteredLowonganPekerjaan = new ArrayList<LowonganPekerjaan>();
+                for(int i = 0; i < lowonganPekerjaanArrayList.size(); i++){
+                    LowonganPekerjaan lowonganPekerjaan = lowonganPekerjaanArrayList.get(i);
+                    if(lowonganPekerjaan.getNama().toLowerCase().contains(s.toLowerCase().trim())){
+                        filteredLowonganPekerjaan.add(lowonganPekerjaan);
+
+                    }
+                }
+                LowonganPekerjaanRecViewAdapter sadapter = new LowonganPekerjaanRecViewAdapter(LowonganPekerjaanActivity.this);
+                sadapter.setLowonganPekerjaanArrayList(filteredLowonganPekerjaan);
+                LowonganPekerjaanRecView.setAdapter(sadapter);
+
+                return false;
+            }
+        });
+
     }
 }

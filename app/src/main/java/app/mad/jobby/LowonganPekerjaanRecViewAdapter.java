@@ -103,6 +103,8 @@ public class LowonganPekerjaanRecViewAdapter extends RecyclerView.Adapter<Lowong
                 intent.putExtra("job_url", job_url);
 
                 context.startActivity(intent);
+
+//                Toast.makeText(context, lowonganPekerjaanArrayList.get(position).getNama(), Toast.LENGTH_SHORT).show();
             }
         });
     }
