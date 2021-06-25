@@ -126,6 +126,7 @@ public class LowonganPekerjaanActivity extends AppCompatActivity implements Filt
         btnFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                searchView.clearFocus();
                 bottomSheet.show(getSupportFragmentManager(), "filterBottomSheet");
             }
         });
